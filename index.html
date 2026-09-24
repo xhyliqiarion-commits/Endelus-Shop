@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Endelus Shop — Parfume Origjinale Arabe & Evropiane</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#F6F3EC;
+    --ink:#1C1A16;
+    --wine:#5B1E2B;
+    --bronze:#A9855F;
+    --bronze-light:#E9DFCC;
+    --line:#DED6C4;
+    --white:#FFFFFF;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ivory);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+  }
+  h1,h2,h3,.serif{font-family:'Fraunces',serif;font-weight:400;letter-spacing:0.01em;}
+  a{color:inherit;text-decoration:none;}
+  img{display:block;max-width:100%;aspect-ratio:auto;}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:40;
+    background:rgba(246,243,236,0.95);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 0;
+  }
+  .logo{font-size:20px;font-weight:600;letter-spacing:0.03em;}
+  .logo span{color:var(--wine);}
+  .nav-right{display:flex;align-items:center;gap:24px;}
+  .icon-btn{position:relative;font-size:13px;display:flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--line);transition:all .2s;}
+  .icon-btn:hover{border-color:var(--bronze);}
+  .cart-count{
+    background:var(--wine);color:var(--white);
+    font-size:11px;min-width:20px;height:20px;border-radius:10px;
+    display:flex;align-items:center;justify-content:center;
+  }
+
+  /* Main */
+  .section-head{
+    display:flex;justify-content:space-between;align-items:baseline;
+    padding:52px 0 28px;
+  }
+  .section-head h2{font-size:32px;}
+
+  /* Filters */
+  .filter-strip{
+    display:flex;gap:8px;flex-wrap:wrap;
+    padding:20px 0;border-bottom:1px solid var(--line);margin-bottom:36px;
+  }
+  .filter-btn{
+    padding:10px 16px;font-size:13px;border:1px solid var(--line);
+    background:transparent;color:var(--ink);transition:all .15s;
+    cursor:pointer;
+  }
+  .filter-btn:hover{border-color:var(--bronze);}
+  .filter-btn.active{background:var(--ink);color:var(--ivory);border-color:var(--ink);}
+
+  /* Product grid */
+  .products{
+    display:grid;grid-template-columns:repeat(auto-fill, minmax(240px, 1fr));
+    gap:24px;margin-bottom:52px;
+  }
+  .product{
+    position:relative;cursor:pointer;
+    transition:opacity .2s;
+  }
+  .product:hover{opacity:0.85;}
+  .product-img{
+    width:100%;aspect-ratio:3/4;
+    background:var(--bronze-light);
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;margin-bottom:14px;
+    border:1px solid var(--line);
+  }
+  .product-img img{
+    width:100%;height:100%;object-fit:cover;
+  }
+  .product h3{font-size:15px;line-height:1.4;margin-bottom:6px;}
+  .product-brand{font-size:12px;color:#8B8178;margin-bottom:8px;}
+  .product-meta{font-size:13px;color:#6B6560;margin-bottom:10px;}
+  .product-price{font-size:16px;font-weight:600;color:var(--wine);margin-bottom:12px;}
+  .product-add{
+    width:100%;padding:10px;font-size:13px;
+    border:1px solid var(--ink);color:var(--ink);
+    transition:all .2s;
+  }
+  .product-add:hover{background:var(--ink);color:var(--ivory);}
+
+  /* Cart drawer */
+  .cart-drawer{
+    position:fixed;right:-100%;top:0;width:100%;max-width:380px;
+    height:100vh;background:var(--white);box-shadow:-2px 0 16px rgba(0,0,0,0.1);
+    transition:right .3s;z-index:50;
+    display:flex;flex-direction:column;
+  }
+  .cart-drawer.open{right:0;}
+  .cart-header{
+    padding:20px;border-bottom:1px solid var(--line);
+    display:flex;justify-content:space-between;align-items:center;
+  }
+  .cart-header h3{font-size:18px;}
+  .cart-close{font-size:24px;cursor:pointer;}
+  .cart-items{
+    flex:1;overflow-y:auto;padding:20px;
+  }
+  .cart-item{
+    display:flex;gap:12px;margin-bottom:16px;padding-bottom:16px;
+    border-bottom:1px solid var(--line);
+  }
+  .cart-item-img{width:60px;height:80px;background:var(--bronze-light);flex-shrink:0;}
+  .cart-item-img img{width:100%;height:100%;object-fit:cover;}
+  .cart-item-info{flex:1;}
+  .cart-item-name{font-size:13px;font-weight:600;margin-bottom:4px;}
+  .cart-item-price{font-size:12px;color:var(--wine);margin-bottom:8px;}
+  .cart-qty{display:flex;gap:8px;align-items:center;}
+  .qty-btn{width:24px;height:24px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:12px;}
+  .qty-btn:hover{background:var(--line);}
+  .qty-display{font-size:12px;min-width:20px;text-align:center;}
+  .cart-footer{
+    border-top:1px solid var(--line);padding:20px;
+  }
+  .cart-total{
+    display:flex;justify-content:space-between;font-size:16px;font-weight:600;
+    margin-bottom:14px;
+  }
+  .checkout-btn{
+    width:100%;padding:14px;background:var(--ink);color:var(--ivory);
+    font-size:14px;font-weight:500;
+  }
+  .checkout-btn:hover{background:var(--wine);}
+
+  /* Checkout modal */
+  .modal{
+    display:none;position:fixed;top:0;left:0;right:0;bottom:0;
+    background:rgba(0,0,0,0.5);z-index:60;align-items:center;justify-content:center;
+  }
+  .modal.open{display:flex;}
+  .modal-content{
+    background:var(--white);width:90%;max-width:450px;padding:32px;
+    border:1px solid var(--line);max-height:90vh;overflow-y:auto;
+  }
+  .modal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;}
+  .modal-header h2{font-size:24px;}
+  .modal-close{font-size:28px;cursor:pointer;color:#999;}
+  .form-group{margin-bottom:16px;}
+  .form-group label{display:block;font-size:13px;margin-bottom:6px;font-weight:500;}
+  .form-group input,.form-group select{
+    width:100%;padding:10px;border:1px solid var(--line);font-size:13px;
+  }
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .order-summary{
+    background:var(--bronze-light);padding:16px;margin:24px 0;font-size:13px;
+    border:1px solid var(--line);
+  }
+  .order-line{display:flex;justify-content:space-between;margin-bottom:8px;}
+  .order-line.total{font-weight:600;font-size:16px;color:var(--wine);}
+  .submit-btn{
+    width:100%;padding:14px;background:var(--wine);color:var(--ivory);
+    font-size:14px;font-weight:500;margin-top:16px;
+  }
+  .submit-btn:hover{background:var(--ink);}
+
+  /* Empty cart */
+  .empty-cart{
+    padding:60px 20px;text-align:center;color:#999;font-size:14px;
+  }
+
+  /* Footer */
+  footer{
+    border-top:1px solid var(--line);padding:52px 0;margin-top:52px;
+  }
+  .footer-content{display:grid;grid-template-columns:repeat(3, 1fr);gap:40px;margin-bottom:32px;}
+  .footer-col h4{font-size:13px;font-weight:600;margin-bottom:12px;}
+  .footer-col p{font-size:13px;color:#8B8178;line-height:1.8;}
+  .footer-bottom{
+    display:flex;justify-content:space-between;align-items:center;
+    padding-top:20px;border-top:1px solid var(--line);font-size:12px;color:#999;
+  }
+
+  @media(max-width:768px){
+    .products{grid-template-columns:repeat(2, 1fr);}
+    .footer-content{grid-template-columns:1fr;}
+    .cart-drawer{max-width:100%;}
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="wrap nav">
+    <div class="logo">ENDELUS <span>Shop</span></div>
+    <div class="nav-right">
+      <button class="icon-btn" id="cart-toggle">
+        🛍️ <span id="cart-badge" class="cart-count">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Main -->
+<main class="wrap">
+  <!-- Hero -->
+  <section style="padding:60px 0 50px;">
+    <h1 style="font-size:48px;line-height:1.1;max-width:600px;margin-bottom:16px;">Parfume Origjinale Arabe & Evropiane</h1>
+    <p style="font-size:16px;color:#6B6560;max-width:500px;">Koleksioni i plotë i markave luksuz — Lattafa, Afnan, Rasasi, Armaf, Rayhaan & më shumë.</p>
+  </section>
+
+  <!-- Filters -->
+  <div class="section-head">
+    <h2>Të Gjithë Produktet</h2>
+    <span id="product-count" style="font-size:14px;color:#999;">0 produkte</span>
+  </div>
+  
+  <div class="filter-strip" id="filters"></div>
+
+  <!-- Products -->
+  <div class="products" id="products"></div>
+</main>
+
+<!-- Cart Drawer -->
+<div class="cart-drawer" id="cart-drawer">
+  <div class="cart-header">
+    <h3>Shporta Juaj</h3>
+    <button class="cart-close" id="cart-close">×</button>
+  </div>
+  <div class="cart-items" id="cart-items">
+    <div class="empty-cart">Shporta është bosh</div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span>Gjithsej:</span>
+      <span id="cart-total">0 €</span>
+    </div>
+    <button class="checkout-btn" id="checkout-btn">Vazhdo në Checkout</button>
+  </div>
+</div>
+
+<!-- Checkout Modal -->
+<div class="modal" id="checkout-modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Plotësoni Formularin</h2>
+      <button class="modal-close" id="modal-close">×</button>
+    </div>
+    <form id="checkout-form">
+      <div class="form-group">
+        <label>Emri & Mbiemri *</label>
+        <input type="text" name="name" required>
+      </div>
+      <div class="form-group">
+        <label>Email *</label>
+        <input type="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label>Telefoni *</label>
+        <input type="tel" name="phone" required>
+      </div>
+      <div class="form-group">
+        <label>Adresa *</label>
+        <input type="text" name="address" required>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Qyteti *</label>
+          <input type="text" name="city" required>
+        </div>
+        <div class="form-group">
+          <label>ZIP Kod *</label>
+          <input type="text" name="zip" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Metoda Pagese *</label>
+        <select name="payment" required>
+          <option value="">-- Zgjidh --</option>
+          <option value="card">Karta Krediti</option>
+          <option value="bank">Transferim Bankari</option>
+          <option value="cash">Paguese me Ardhje</option>
+        </select>
+      </div>
+      <div class="order-summary">
+        <div class="order-line">
+          <span id="summary-items">0 artikuj</span>
+          <span id="summary-subtotal">0 €</span>
+        </div>
+        <div class="order-line" style="border-top:1px solid rgba(0,0,0,0.1);padding-top:8px;margin-top:8px;">
+          <strong>GJITHSEJ</strong>
+          <strong id="summary-total">0 €</strong>
+        </div>
+      </div>
+      <button type="submit" class="submit-btn">Përfundo Porosjen</button>
+    </form>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    <div class="footer-content">
+      <div class="footer-col">
+        <h4>Rreth Nesh</h4>
+        <p>Endelus Shop ofron parfume origjinale arabe dhe evropiane të cilësisë së lartë në çmimet më të mira.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <p>📧 info@endelus.com<br>📱 +383 (0) 49 XXX XXXX<br>📍 Prishtinë, Kosovë</p>
+      </div>
+      <div class="footer-col">
+        <h4>Orari i Punës</h4>
+        <p>E hënë - E premte: 10:00 - 20:00<br>E shtunë: 10:00 - 18:00<br>E diel: Mbyllur</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Endelus Shop. Të gjitha të drejtat e rezervuara.</span>
+      <span>Made with ❤️ in Kosovo</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Data
+let cart = JSON.parse(localStorage.getItem('endelus_cart')) || [];
+let products = [];
+let filteredProducts = [];
+let allBrands = [];
+let selectedBrand = null;
+
+// Load products
+async function loadProducts() {
+  try {
+    const response = await fetch('products.json');
+    products = await response.json();
+    products = products.products;
+    allBrands = [...new Set(products.map(p => p.brand))].sort();
+    filteredProducts = products;
+    renderFilters();
+    renderProducts();
+    updateCartBadge();
+  } catch(e) {
+    console.error('Error loading products:', e);
+  }
+}
+
+// Render filters
+function renderFilters() {
+  const filterContainer = document.getElementById('filters');
+  filterContainer.innerHTML = '<button class="filter-btn active" data-brand="all">Të Gjitha</button>';
+  allBrands.forEach(brand => {
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn';
+    btn.textContent = brand;
+    btn.setAttribute('data-brand', brand);
+    btn.addEventListener('click', () => filterByBrand(brand));
+    filterContainer.appendChild(btn);
+  });
+  document.querySelector('.filter-btn[data-brand="all"]').addEventListener('click', () => filterByBrand(null));
+}
+
+// Filter by brand
+function filterByBrand(brand) {
+  selectedBrand = brand;
+  filteredProducts = brand ? products.filter(p => p.brand === brand) : products;
+  
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  document.querySelector(`[data-brand="${brand || 'all'}"]`).classList.add('active');
+  
+  renderProducts();
+}
+
+// Render products
+function renderProducts() {
+  const grid = document.getElementById('products');
+  const count = document.getElementById('product-count');
+  
+  grid.innerHTML = '';
+  filteredProducts.forEach(p => {
+    const div = document.createElement('div');
+    div.className = 'product';
+    div.innerHTML = `
+      <div class="product-img">
+        <img src="assets/products/${p.image}" alt="${p.name}" onerror="this.src='assets/logo.jpg'">
+      </div>
+      <div class="product-brand">${p.brand}</div>
+      <h3>${p.name}</h3>
+      <div class="product-meta">${p.size} — ${p.gender === 'Meshkuj' ? '♂ Mashk.' : p.gender === 'Femra' ? '♀ Femra' : '⚬ Uniseks'}</div>
+      <div class="product-price">${p.price}€</div>
+      <button class="product-add" onclick="addToCart(${p.id})">Shto në Shportë</button>
+    `;
+    grid.appendChild(div);
+  });
+  
+  count.textContent = `${filteredProducts.length} produkte`;
+}
+
+// Cart functions
+function addToCart(productId) {
+  const product = products.find(p => p.id === productId);
+  if(!product) return;
+  
+  const existing = cart.find(c => c.id === productId);
+  if(existing) {
+    existing.qty++;
+  } else {
+    cart.push({...product, qty: 1});
+  }
+  
+  saveCart();
+  renderCart();
+  updateCartBadge();
+}
+
+function removeFromCart(productId) {
+  cart = cart.filter(c => c.id !== productId);
+  saveCart();
+  renderCart();
+  updateCartBadge();
+}
+
+function updateQty(productId, delta) {
+  const item = cart.find(c => c.id === productId);
+  if(!item) return;
+  item.qty += delta;
+  if(item.qty < 1) removeFromCart(productId);
+  else {
+    saveCart();
+    renderCart();
+    updateCartBadge();
+  }
+}
+
+function saveCart() {
+  localStorage.setItem('endelus_cart', JSON.stringify(cart));
+}
+
+function updateCartBadge() {
+  const count = cart.reduce((sum, item) => sum + item.qty, 0);
+  document.getElementById('cart-badge').textContent = count;
+}
+
+function renderCart() {
+  const container = document.getElementById('cart-items');
+  const total = document.getElementById('cart-total');
+  
+  if(cart.length === 0) {
+    container.innerHTML = '<div class="empty-cart">Shporta është bosh</div>';
+    total.textContent = '0 €';
+    return;
+  }
+  
+  container.innerHTML = cart.map(item => `
+    <div class="cart-item">
+      <div class="cart-item-img">
+        <img src="assets/products/${item.image}" alt="${item.name}" onerror="this.src='assets/logo.jpg'">
+      </div>
+      <div class="cart-item-info">
+        <div class="cart-item-name">${item.name}</div>
+        <div class="cart-item-price">${item.price}€ × ${item.qty}</div>
+        <div class="cart-qty">
+          <button class="qty-btn" onclick="updateQty(${item.id}, -1)">−</button>
+          <span class="qty-display">${item.qty}</span>
+          <button class="qty-btn" onclick="updateQty(${item.id}, 1)">+</button>
+          <button class="qty-btn" onclick="removeFromCart(${item.id})" style="color:#999;">✕</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+  
+  const cartTotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0).toFixed(2);
+  total.textContent = cartTotal + ' €';
+}
+
+// Checkout
+document.getElementById('cart-toggle').addEventListener('click', () => {
+  document.getElementById('cart-drawer').classList.toggle('open');
+});
+
+document.getElementById('cart-close').addEventListener('click', () => {
+  document.getElementById('cart-drawer').classList.remove('open');
+});
+
+document.getElementById('checkout-btn').addEventListener('click', () => {
+  if(cart.length === 0) {
+    alert('Shporta juaj është bosh!');
+    return;
+  }
+  document.getElementById('checkout-modal').classList.add('open');
+  updateOrderSummary();
+});
+
+document.getElementById('modal-close').addEventListener('click', () => {
+  document.getElementById('checkout-modal').classList.remove('open');
+});
+
+function updateOrderSummary() {
+  const itemCount = cart.reduce((sum, item) => sum + item.qty, 0);
+  const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0).toFixed(2);
+  document.getElementById('summary-items').textContent = itemCount + ' artikuj';
+  document.getElementById('summary-subtotal').textContent = subtotal + ' €';
+  document.getElementById('summary-total').textContent = subtotal + ' €';
+}
+
+document.getElementById('checkout-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  alert('✅ Porosi e përfunduar!\n\nFaleminderit për blerjen tuaj në Endelus Shop!');
+  cart = [];
+  saveCart();
+  updateCartBadge();
+  renderCart();
+  document.getElementById('checkout-form').reset();
+  document.getElementById('checkout-modal').classList.remove('open');
+  document.getElementById('cart-drawer').classList.remove('open');
+});
+
+// Init
+loadProducts();
+</script>
+
+</body>
+</html>
