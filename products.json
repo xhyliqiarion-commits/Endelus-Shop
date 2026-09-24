@@ -1,0 +1,654 @@
+{
+  "shop": {
+    "name": "Endelus Shop",
+    "description": "Parfume origjinale nga markat më të njohura",
+    "currency": "EUR"
+  },
+  "brands": [
+    "Lattafa",
+    "Maison Alhambra",
+    "French Avenue",
+    "Afnan"
+  ],
+  "products": [
+    {
+      "id": 1,
+      "brand": "Lattafa",
+      "name": "Yara",
+      "size": "100ml",
+      "price": 29.90,
+      "gender": null,
+      "image": "lattafa-yara.webp"
+    },
+    {
+      "id": 2,
+      "brand": "Lattafa",
+      "name": "Asad",
+      "size": "100ml",
+      "price": 29.90,
+      "gender": null,
+      "image": "lattafa-asad.webp"
+    },
+    {
+      "id": 3,
+      "brand": "Lattafa",
+      "name": "Fakhar",
+      "size": null,
+      "price": 27.80,
+      "gender": null,
+      "image": "lattafa-fakhar.jpg"
+    },
+    {
+      "id": 4,
+      "brand": "Lattafa",
+      "name": "Khamrah",
+      "size": "100ml",
+      "price": 34.90,
+      "gender": null,
+      "image": "lattafa-khamrah.jpg"
+    },
+    {
+      "id": 5,
+      "brand": "Lattafa",
+      "name": "Khamrah Qahwa",
+      "size": "100ml",
+      "price": 34.90,
+      "gender": null,
+      "image": "lattafa-khamrah-qahwa.jpg"
+    },
+    {
+      "id": 6,
+      "brand": "Lattafa",
+      "name": "Khamrah Dukhan",
+      "size": "100ml",
+      "price": 34.90,
+      "gender": null,
+      "image": "lattafa-khamrah-dukhan.jpg"
+    },
+    {
+      "id": 7,
+      "brand": "Lattafa",
+      "name": "Bade'e Al Oud White",
+      "size": "100ml",
+      "price": 29.90,
+      "gender": "Uniseks",
+      "image": "lattafa-badee-al-oud-white.webp"
+    },
+    {
+      "id": 8,
+      "brand": "Lattafa",
+      "name": "Bade'e Al Oud Black",
+      "size": "100ml",
+      "price": 29.90,
+      "gender": "Meshkuj",
+      "image": "lattafa-badee-al-oud-black.jpg"
+    },
+    {
+      "id": 9,
+      "brand": "Lattafa",
+      "name": "Bade'e Al Oud Pink",
+      "size": "100ml",
+      "price": 29.90,
+      "gender": "Femra",
+      "image": "lattafa-badee-al-oud-pink.webp"
+    },
+    {
+      "id": 10,
+      "brand": "Lattafa",
+      "name": "Bade'e Al Oud Red",
+      "size": "100ml",
+      "price": 29.90,
+      "gender": "Femra",
+      "image": "lattafa-badee-al-oud-red.jpg"
+    },
+    {
+      "id": 11,
+      "brand": "Lattafa",
+      "name": "Bade'e Al Oud Amethyst",
+      "size": "100ml",
+      "price": 29.90,
+      "gender": "Uniseks",
+      "image": "lattafa-badee-al-oud-amethyst.jpg"
+    },
+    {
+      "id": 12,
+      "brand": "Maison Alhambra",
+      "name": "Fusion Intense",
+      "size": "80ml",
+      "price": 29.90,
+      "gender": "Meshkuj",
+      "image": "alhambra-fusion-intense.jpg"
+    },
+    {
+      "id": 13,
+      "brand": "Maison Alhambra",
+      "name": "Smoky Touch",
+      "size": "80ml",
+      "price": 29.90,
+      "gender": "Meshkuj",
+      "image": "alhambra-smoky-touch.jpg"
+    },
+    {
+      "id": 14,
+      "brand": "Maison Alhambra",
+      "name": "Jean Lowe Azure",
+      "size": "100ml",
+      "price": 29.90,
+      "gender": "Meshkuj",
+      "image": "alhambra-jean-lowe-azure.webp"
+    },
+    {
+      "id": 15,
+      "brand": "Maison Alhambra",
+      "name": "Jean Lowe Vibe",
+      "size": "100ml",
+      "price": 29.90,
+      "gender": "Meshkuj",
+      "image": "alhambra-jean-lowe-vibe.jpg"
+    },
+    {
+      "id": 16,
+      "brand": "Maison Alhambra",
+      "name": "Jean Lowe Fantasme",
+      "size": "100ml",
+      "price": 29.90,
+      "gender": "Meshkuj",
+      "image": "alhambra-jean-lowe-fantasme.jpg"
+    },
+    {
+      "id": 17,
+      "brand": "French Avenue",
+      "name": "Liquid Brun",
+      "size": "100ml",
+      "price": 39.90,
+      "gender": "Uniseks",
+      "image": "frenchavenue-liquid-brun.jpg"
+    },
+    {
+      "id": 18,
+      "brand": "Afnan",
+      "name": "Supremacy Collector's Edition",
+      "size": "100ml",
+      "price": 84.90,
+      "gender": "Meshkuj",
+      "image": "afnan-supremacy-collectors.jpg"
+    },
+    {
+      "id": 19,
+      "brand": "Afnan",
+      "name": "9 PM",
+      "size": "100ml",
+      "price": 39.90,
+      "gender": "Meshkuj",
+      "image": "afnan-9pm.jpg"
+    },
+    {
+      "id": 20,
+      "brand": "Afnan",
+      "name": "9 PM Rebel",
+      "size": "100ml",
+      "price": 54.90,
+      "gender": "Meshkuj",
+      "image": "afnan-9pm-rebel.webp"
+    },
+    {
+      "id": 21,
+      "brand": "Afnan",
+      "name": "9 PM Elixir",
+      "size": "100ml",
+      "price": 59.90,
+      "gender": "Meshkuj",
+      "image": "afnan-9pm-elixir.jpg"
+    },
+    {
+      "id": 22,
+      "brand": "Afnan",
+      "name": "9 AM Dive",
+      "size": "100ml",
+      "price": 43.90,
+      "gender": "Meshkuj",
+      "image": "afnan-9am-dive.webp"
+    },
+    {
+      "id": 23,
+      "brand": "Afnan",
+      "name": "9 AM",
+      "size": "100ml",
+      "price": 39.90,
+      "gender": "Meshkuj",
+      "image": "afnan-9am.webp"
+    },
+    {
+      "id": 24,
+      "brand": "Afnan",
+      "name": "Supremacy in Heaven",
+      "size": "100ml",
+      "price": 44.90,
+      "gender": "Meshkuj",
+      "image": "afnan-supremacy-in-heaven.webp"
+    },
+    {
+      "id": 25,
+      "brand": "Lattafa",
+      "name": "Confidential Private Gold",
+      "size": "100ml",
+      "price": 23.90,
+      "gender": "Uniseks",
+      "image": "lattafa-confidential-private-gold.webp"
+    },
+    {
+      "id": 26,
+      "brand": "Couture",
+      "name": "Dkhoon Al Emiratie",
+      "size": "100ml",
+      "price": 44.90,
+      "gender": "Meshkuj",
+      "image": "couture-dkhoon-al-emiratie.webp"
+    },
+    {
+      "id": 27,
+      "brand": "Rasasi",
+      "name": "Hawas Ice for Him",
+      "size": "100ml",
+      "price": 54.90,
+      "gender": "Meshkuj",
+      "image": "rasasi-hawas-ice.jpg"
+    },
+    {
+      "id": 28,
+      "brand": "Fragrance World",
+      "name": "Intense Peach",
+      "size": "80ml",
+      "price": 24.90,
+      "gender": "Uniseks",
+      "image": "fragranceworld-intense-peach.webp"
+    },
+    {
+      "id": 29,
+      "brand": "Armaf",
+      "name": "Odyssey Mandarin Sky",
+      "size": "100ml",
+      "price": 34.90,
+      "gender": "Meshkuj",
+      "image": "armaf-odyssey-mandarin-sky.webp"
+    },
+    {
+      "id": 30,
+      "brand": "Rasasi",
+      "name": "Hawas Fire",
+      "size": "100ml",
+      "price": 54.90,
+      "gender": "Meshkuj",
+      "image": "rasasi-hawas-fire.jpg"
+    },
+    {
+      "id": 31,
+      "brand": "Rasasi",
+      "name": "Hawas For Him",
+      "size": "100ml",
+      "price": 54.90,
+      "gender": "Meshkuj",
+      "image": "rasasi-hawas-for-him.webp"
+    },
+    {
+      "id": 32,
+      "brand": "Rasasi",
+      "name": "Hawas Black",
+      "size": "100ml",
+      "price": 54.90,
+      "gender": "Meshkuj",
+      "image": "rasasi-hawas-black.webp"
+    },
+    {
+      "id": 33,
+      "brand": "Lattafa",
+      "name": "Fakhar Platin",
+      "size": "100ml",
+      "price": 29.90,
+      "gender": "Meshkuj",
+      "image": "lattafa-fakhar-platin.jpg"
+    },
+    {
+      "id": 34,
+      "brand": "Lattafa",
+      "name": "Fakhar Gold",
+      "size": "100ml",
+      "price": 29.90,
+      "gender": "Meshkuj",
+      "image": "lattafa-fakhar-gold.webp"
+    },
+    {
+      "id": 35,
+      "brand": "Lattafa",
+      "name": "Fakhar Women",
+      "size": "100ml",
+      "price": 29.90,
+      "gender": "Femra",
+      "image": "lattafa-fakhar-women.webp"
+    },
+    {
+      "id": 36,
+      "brand": "French Avenue",
+      "name": "Vulcan Feo",
+      "size": "100ml",
+      "price": 44.90,
+      "gender": "Meshkuj",
+      "image": "frenchavenue-vulcan-feo.webp"
+    },
+    {
+      "id": 37,
+      "brand": "Lattafa",
+      "name": "Vintage Radio",
+      "size": "100ml",
+      "price": 39.90,
+      "gender": "Uniseks",
+      "image": "lattafa-vintage-radio.webp"
+    },
+    {
+      "id": 38,
+      "brand": "Lattafa",
+      "name": "Yara Moi",
+      "size": "100ml",
+      "price": 29.90,
+      "gender": "Femra",
+      "image": "lattafa-yara-moi.webp"
+    },
+    {
+      "id": 39,
+      "brand": "Lattafa",
+      "name": "Yara Candy",
+      "size": "100ml",
+      "price": 29.90,
+      "gender": "Femra",
+      "image": "lattafa-yara-candy.jpg"
+    },
+    {
+      "id": 40,
+      "brand": "Rayhaan",
+      "name": "Italia Pour Home",
+      "size": "100ml",
+      "price": 44.90,
+      "gender": "Uniseks",
+      "image": "rayhaan-italia-pour-home.webp"
+    },
+    {
+      "id": 41,
+      "brand": "Rayhaan",
+      "name": "Pacific Aura",
+      "size": "100ml",
+      "price": 44.90,
+      "gender": "Meshkuj",
+      "image": "rayhaan-pacific-aura.jpg"
+    },
+    {
+      "id": 42,
+      "brand": "Rayhaan",
+      "name": "Tonquin Giza",
+      "size": "100ml",
+      "price": 44.90,
+      "gender": "Meshkuj",
+      "image": "rayhaan-tonquin-giza.jpg"
+    },
+    {
+      "id": 43,
+      "brand": "Armaf",
+      "name": "Odyssey Homme",
+      "size": "100ml",
+      "price": 34.90,
+      "gender": "Meshkuj",
+      "image": "armaf-odyssey-homme.jpg"
+    },
+    {
+      "id": 44,
+      "brand": "Lattafa",
+      "name": "Yara Tous",
+      "size": "100ml",
+      "price": 29.90,
+      "gender": "Femra",
+      "image": "lattafa-yara-tous.webp"
+    },
+    {
+      "id": 45,
+      "brand": "Lattafa",
+      "name": "Set 5x20ml",
+      "size": "5x20ml",
+      "price": 39.90,
+      "gender": "Uniseks",
+      "image": "lattafa-set-5x20ml-v1.jpg"
+    },
+    {
+      "id": 46,
+      "brand": "Lattafa",
+      "name": "Set 5x20ml Collection",
+      "size": "5x20ml",
+      "price": 39.90,
+      "gender": "Uniseks",
+      "image": "lattafa-set-5x20ml-v2.jpg"
+    },
+    {
+      "id": 47,
+      "brand": "Zimaya",
+      "name": "Rabab",
+      "size": "100ml",
+      "price": 29.90,
+      "gender": "Uniseks",
+      "image": "zimaya-rabab.jpg"
+    },
+    {
+      "id": 48,
+      "brand": "Khadlaj",
+      "name": "Island Dreams",
+      "size": "100ml",
+      "price": 39.90,
+      "gender": "Uniseks",
+      "image": "khadlaj-island-dreams.webp"
+    },
+    {
+      "id": 49,
+      "brand": "Lattafa",
+      "name": "Atlas",
+      "size": "55ml",
+      "price": 44.90,
+      "gender": "Uniseks",
+      "image": "lattafa-atlas.webp"
+    },
+    {
+      "id": 50,
+      "brand": "Lattafa",
+      "name": "Eclaire",
+      "size": "100ml",
+      "price": 39.90,
+      "gender": "Uniseks",
+      "image": "lattafa-eclaire.jpg"
+    },
+    {
+      "id": 51,
+      "brand": "Afnan",
+      "name": "Rare Reef",
+      "size": "100ml",
+      "price": 49.90,
+      "gender": "Meshkuj",
+      "image": "afnan-rare-reef.jpg"
+    },
+    {
+      "id": 52,
+      "brand": "Armaf",
+      "name": "Club de Nuit Urban Man Elixir",
+      "size": "100ml",
+      "price": 39.90,
+      "gender": "Meshkuj",
+      "image": "armaf-club-de-nuit-urban-man-elixir.webp"
+    },
+    {
+      "id": 53,
+      "brand": "Armaf",
+      "name": "Club de Nuit Intense Man",
+      "size": "100ml",
+      "price": 39.90,
+      "gender": "Meshkuj",
+      "image": "armaf-club-de-nuit-intense-man.webp"
+    },
+    {
+      "id": 54,
+      "brand": "Lattafa",
+      "name": "Asad Black",
+      "size": "100ml",
+      "price": 29.90,
+      "gender": "Meshkuj",
+      "image": "lattafa-asad-black.jpg"
+    },
+    {
+      "id": 55,
+      "brand": "Lattafa",
+      "name": "Asad Bourbon",
+      "size": "100ml",
+      "price": 29.90,
+      "gender": "Uniseks",
+      "image": "lattafa-asad-bourbon.webp"
+    },
+    {
+      "id": 56,
+      "brand": "Lattafa",
+      "name": "Asad Elixir",
+      "size": "100ml",
+      "price": 29.90,
+      "gender": "Meshkuj",
+      "image": "lattafa-asad-elixir.webp"
+    },
+    {
+      "id": 57,
+      "brand": "Lattafa",
+      "name": "Asad Zanzibar",
+      "size": "100ml",
+      "price": 29.90,
+      "gender": "Uniseks",
+      "image": "lattafa-asad-zanzibar.webp"
+    },
+    {
+      "id": 58,
+      "brand": "Lattafa",
+      "name": "Asad Zanzibar Limited Edition",
+      "size": "100ml",
+      "price": 29.90,
+      "gender": "Uniseks",
+      "image": "lattafa-asad-zanzibar-limited.webp"
+    },
+    {
+      "id": 59,
+      "brand": "Afnan",
+      "name": "Turathi Electric",
+      "size": "90ml",
+      "price": 59.90,
+      "gender": "Meshkuj",
+      "image": "afnan-turathi-electric.webp"
+    },
+    {
+      "id": 60,
+      "brand": "Afnan",
+      "name": "Turathi Blue",
+      "size": "90ml",
+      "price": 49.90,
+      "gender": "Meshkuj",
+      "image": "afnan-turathi-blue.webp"
+    },
+    {
+      "id": 61,
+      "brand": "Rasasi",
+      "name": "Hawas Elixir",
+      "size": "100ml",
+      "price": 59.90,
+      "gender": "Meshkuj",
+      "image": "rasasi-hawas-elixir.webp"
+    },
+    {
+      "id": 62,
+      "brand": "Rasasi",
+      "name": "Hawas Viper",
+      "size": "100ml",
+      "price": 54.90,
+      "gender": "Meshkuj",
+      "image": "rasasi-hawas-viper.webp"
+    },
+    {
+      "id": 63,
+      "brand": "Maison Alhambra",
+      "name": "Spectre Bronzite",
+      "size": "100ml",
+      "price": 29.90,
+      "gender": "Meshkuj",
+      "image": "maisonalhambra-spectre-bronzite.webp"
+    },
+    {
+      "id": 64,
+      "brand": "Fragrance World",
+      "name": "Oud Wonder",
+      "size": "80ml",
+      "price": 24.90,
+      "gender": "Meshkuj",
+      "image": "fragranceworld-oud-wonder.webp"
+    },
+    {
+      "id": 65,
+      "brand": "Fragrance World",
+      "name": "Lush Cherry",
+      "size": "80ml",
+      "price": 24.90,
+      "gender": "Meshkuj",
+      "image": "fragranceworld-lush-cherry.webp"
+    },
+    {
+      "id": 66,
+      "brand": "Fragrance World",
+      "name": "Fabulous Life",
+      "size": "80ml",
+      "price": 24.90,
+      "gender": "Meshkuj",
+      "image": "fragranceworld-fabulous-life.jpg"
+    },
+    {
+      "id": 67,
+      "brand": "Maison Alhambra",
+      "name": "Jean Lowe Verde Aura",
+      "size": "100ml",
+      "price": 29.90,
+      "gender": "Meshkuj",
+      "image": "maisonalhambra-jean-lowe-verde-aura.webp"
+    },
+    {
+      "id": 68,
+      "brand": "Maison Alhambra",
+      "name": "Jean Lowe Maitre",
+      "size": "100ml",
+      "price": 29.90,
+      "gender": "Meshkuj",
+      "image": "maisonalhambra-jean-lowe-maitre.jpg"
+    },
+    {
+      "id": 69,
+      "brand": "Maison Alhambra",
+      "name": "Jean Lowe Fraiche",
+      "size": "100ml",
+      "price": 29.90,
+      "gender": "Meshkuj",
+      "image": "maisonalhambra-jean-lowe-fraiche.webp"
+    },
+    {
+      "id": 70,
+      "brand": "Lattafa",
+      "name": "24 Carat",
+      "size": "100ml",
+      "price": 34.90,
+      "gender": "Meshkuj",
+      "image": "lattafa-24-carat.jpg"
+    },
+    {
+      "id": 71,
+      "brand": "Maison Alhambra",
+      "name": "Pacific Blue",
+      "size": "100ml",
+      "price": 29.90,
+      "gender": "Meshkuj",
+      "image": "maisonalhambra-pacific-blue.webp"
+    }
+  ]
+}
